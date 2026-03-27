@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 interface HeaderProps {
   productTeams: string[];
@@ -16,7 +16,7 @@ export default function Header({
   onAddClick,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-40 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 shadow-sm">
+    <header className=" bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 shadow-sm">
       <div className="w-full max-w-6xl mx-auto px-4 py-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           {/* Left side - Dropdown */}
