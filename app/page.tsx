@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import TestCasesList from '../components/TestCasesList';
-import ExecuteButton from '../components/ExecuteButton';
-import AddTestCaseModal from '../components/AddTestCaseModal';
-import Toast from '../components/Toast';
+import Header from '../components/Testcases/Header';
+import TestCasesList from '../components/Testcases/TestCasesList';
+import ExecuteButton from '../components/Testcases/ExecuteButton';
+import AddTestCaseModal from '../components/Testcases/AddTestCaseModal';
+import Toast from '../components/Testcases/Toast';
 
 interface TestCase {
   'Test Case Name ': string;
@@ -132,15 +132,16 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
-      <Header
+    <div className="min-h-screen bg-zinc-50 dark:bg-black grid grid-columns-[auto 1fr]">
+      
+
+      <main className="w-full max-w-6xl mx-auto px-4 py-8">
+        <Header
         productTeams={productTeams}
         selectedTeam={selectedTeam}
         onTeamChange={setSelectedTeam}
         onAddClick={() => setIsModalOpen(true)}
       />
-
-      <main className="w-full max-w-6xl mx-auto px-4 py-8">
         <TestCasesList
           testCases={testCases}
           selectedTeam={selectedTeam}
@@ -163,12 +164,7 @@ export default function Home() {
         onSave={handleSaveTestCase}
       />
 
-      <Toast
-        message={toastMessage}
-        type="success"
-        isVisible={showToast}
-        onClose={() => setShowToast(false)}
-      />
+     
     </div>
   );
 }
